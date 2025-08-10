@@ -1,12 +1,68 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Mission from '@/components/Mission';
+import Products from '@/components/Products';
+import Community from '@/components/Community';
+import FoundersNote from '@/components/FoundersNote';
+import Roadmap from '@/components/Roadmap';
+import FAQ from '@/components/FAQ';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // JSON-LD structured data for SEO
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ARTHALEARN",
+      "description": "ARTHALEARN is on a mission to make India financially literate and build tech products that boost the economy.",
+      "url": "https://arthalearn.com",
+      "logo": "https://arthalearn.com/logo.png",
+      "sameAs": [
+        "https://chat.whatsapp.com/Fsac0NGs4w9LW9oPLmrfou"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXX-XXX-XXXX",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "ARTHALEARN Founders"
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background font-brand">
+      <Header />
+      <main>
+        <Hero />
+        <Mission />
+        <Products />
+        <Community />
+        <FoundersNote />
+        <Roadmap />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
