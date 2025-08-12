@@ -30,6 +30,7 @@ const Header = () => {
     { label: 'Products', id: 'products' },
     { label: 'Community', id: 'community' },
     { label: "Founders' Note", id: 'founders-note' },
+    { label: 'Roadmap', id: 'roadmap' },
     { label: 'Contact', id: 'contact' }
   ];
 

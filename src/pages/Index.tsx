@@ -36,7 +36,35 @@ const Index = () => {
       "founder": {
         "@type": "Person",
         "name": "ARTHALEARN Founders"
-      }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Financial Literacy Services",
+        "itemListElement": [
+          {
+            "@type": "Service",
+            "name": "Community Learning Hub",
+            "description": "Daily market insights and financial education for the community"
+          },
+          {
+            "@type": "Service", 
+            "name": "Market Analysis Tools",
+            "description": "Digital tools for understanding financial markets"
+          },
+          {
+            "@type": "Service",
+            "name": "Campus Programs", 
+            "description": "Financial literacy programs for educational institutions"
+          }
+        ]
+      },
+      "knowsAbout": [
+        "Financial Literacy",
+        "Indian Economy",
+        "Market Education", 
+        "Community Learning",
+        "Educational Technology"
+      ]
     };
 
     const script = document.createElement('script');
